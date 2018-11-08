@@ -1,7 +1,8 @@
-**/node_modules/**
 flexible/node_modules/**
 standard/node_modules/**
-**/npm-debug.log
+flexible/npm-debug.log
+standard/npm-debug.logs
+
 **/coverage/
 
 dump.rdb
@@ -10,5 +11,7 @@ logs/
 *.pb
 **/.idea/
 **/.nyc_output
-**/yarn.lock
-**/package-lock.json
+flexible/yarn.lock
+standard/yarn.lock
+flexible/package-lock.json
+standard/package-lock.json
