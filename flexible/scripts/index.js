@@ -1,21 +1,16 @@
-function showMaintenanceMsg(){
-    var infoElem = $('#info'); 
-    var maintenanceElem = $('#maintenance'); 
-    infoElem.hide();
-    maintenanceElem.show();
-};
+
 
 function showHomePage(){
-    var infoElem = $('#info'); 
-    var maintenanceElem = $('#maintenance'); 
-    infoElem.show();
-    maintenanceElem.hide();
+    hideMaintenanceMsg();
+    hideResumePage();
     resetActiveTab();
+    showInfo();
     $('#homeTab').addClass('active');
 };
 
 function showBlogsPage(){
     resetActiveTab();
+    hideResumePage();
     showMaintenanceMsg();
     $('#blogsTab').addClass('active');
 };
@@ -23,15 +18,17 @@ function showBlogsPage(){
 function showProjectsPage(){
     resetActiveTab();
     showMaintenanceMsg();
+    hideResumePage();
     $('#projectsTab').addClass('active');
 };
 
 function showResumePage(){
     resetActiveTab();
-    showMaintenanceMsg();
+    hideInfo();
+    hideMaintenanceMsg();
     $('#resumeTab').addClass('active');
+    $('.resume').show();
 };
-
 
 function resetActiveTab(){
     $('#homeTab').removeClass('active');
@@ -39,3 +36,40 @@ function resetActiveTab(){
     $('#blogsTab').removeClass('active');
     $('#resumeTab').removeClass('active');
 }
+
+function hideResumePage(){
+    var resumeElem = $('.resume');
+    if(resumeElem){
+        resumeElem.hide();
+    }
+};
+
+function hideInfo(){
+    var infoElem = $('#info'); 
+    if(infoElem){
+        infoElem.hide();
+    }
+};
+
+function showInfo(){
+    var infoElem = $('#info'); 
+    if(infoElem){
+        infoElem.show();
+    }
+};
+
+function showMaintenanceMsg(){
+    var maintenanceElem = $('#maintenance'); 
+    if(maintenanceElem){
+        maintenanceElem.show();
+    }
+    hideInfo();
+    hideResumePage();
+};
+
+function hideMaintenanceMsg(){
+    var maintenanceElem = $('#maintenance'); 
+    if(maintenanceElem){
+        maintenanceElem.hide();
+    } 
+};
