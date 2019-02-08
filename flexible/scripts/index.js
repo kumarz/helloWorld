@@ -73,3 +73,20 @@ function hideMaintenanceMsg(){
         maintenanceElem.hide();
     } 
 };
+
+
+function disableRightclick(evt){
+    console.log('came inside right click');
+  if(evt && evt.button==2){
+     alert('Restricted !!!');
+     return false;    
+   }
+};
+
+$('.resume-pdf').mousedown(function() {
+    console.log('came inside pdf click');
+    if(evt && evt.button==2){
+        alert('Restricted !!!');
+        return false;    
+    }
+});
